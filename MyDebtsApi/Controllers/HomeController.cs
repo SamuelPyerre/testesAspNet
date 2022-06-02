@@ -8,51 +8,53 @@ namespace MyDebtsApi.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet("/")]
-        //POSSO USAR A ROTA JUNTO COM O HttpGet também ********
-        //[Route("/")]
-        public List<DividaModel> Get([FromServices] AppDbContext context)
-        {
-            return context.Dividas.ToList();
-        }
+        public IActionResult Get([FromServices] AppDbContext context)
+            => Ok(context.Dividas.ToList());
+        
 
         [HttpGet("/{id:int}")]
-        public DividaModel GetPegarId([FromRoute] int id, [FromServices] AppDbContext context)
+        public IActionResult GetPegarId([FromRoute] int id, [FromServices] AppDbContext context)
         {
-            return context.Dividas.FirstOrDefault(x => x.Id == id);
+            var divida = context.Dividas.FirstOrDefault(x => x.Id == id);
+            if(divida == null)
+                return NotFound();
+            return Ok(divida);
         }
 
         [HttpPost("/")]
-        public DividaModel Post([FromBody] DividaModel divida, [FromServices] AppDbContext context)
+        public IActionResult Post([FromBody] DividaModel divida, [FromServices] AppDbContext context)
         {
             context.Dividas.Add(divida);
             context.SaveChanges();
 
-            return divida;
+            return Created($"/{divida.Id}", divida);
         }
 
         [HttpPut("/{id:int}")]
-        public DividaModel Put([FromRoute] int id, [FromBody] DividaModel divida, [FromServices] AppDbContext context)
+        public IActionResult Put([FromRoute] int id, [FromBody] DividaModel divida, [FromServices] AppDbContext context)
         {
             var model = context.Dividas.FirstOrDefault(x=> x.Id == id);
             if(model == null)
-                return divida;
+                return NotFound();
             model.Titulo = divida.Titulo;
             model.Descricao = divida.Descricao;
             context.Dividas.Update(model);
             context.SaveChanges();
 
-            return model;
+            return Ok(model);
         }
 
         [HttpDelete("/{id:int}")]
-        public DividaModel Delete([FromRoute] int id, [FromServices] AppDbContext context)
+        public IActionResult Delete([FromRoute] int id, [FromServices] AppDbContext context)
         {
             var model = context.Dividas.FirstOrDefault(x=> x.Id == id);
             
+            if(model == null)
+                return NotFound();
             context.Dividas.Remove(model);
             context.SaveChanges();
 
-            return model;
+            return Ok(model);
         }
     }
 }

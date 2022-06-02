@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrPlmZwWeAAjRa/exUDOb0dcn6xF6e0Kh/Ilgjb+j/JPUoVEdYq3EZcCVlBpR+R/Zsof2nbjIVmpsgpXvKW4LA==",
+  "dgSpecHash": "kz1Q4qd1WYK2ALySXg7zUtnHxIXmWe2+zjp6mmXarX0ruWC78vHFfuw9KglNkH8XV07YQqinrzO54Xz0ITz9bg==",
   "success": true,
-  "projectFilePath": "/mnt/c/dev/asp/MyDebtsApi/MyDebtsApi.csproj",
+  "projectFilePath": "/mnt/c/dev/Repositório/testesAspNet/MyDebtsApi/MyDebtsApi.csproj",
   "expectedPackageFiles": [
     "/home/samuelpierre/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/samuelpierre/.nuget/packages/microsoft.data.sqlite.core/6.0.5/microsoft.data.sqlite.core.6.0.5.nupkg.sha512",

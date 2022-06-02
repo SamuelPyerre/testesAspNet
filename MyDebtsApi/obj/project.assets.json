@@ -1134,11 +1134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/c/dev/asp/MyDebtsApi/MyDebtsApi.csproj",
+      "projectUniqueName": "/mnt/c/dev/Repositório/testesAspNet/MyDebtsApi/MyDebtsApi.csproj",
       "projectName": "MyDebtsApi",
-      "projectPath": "/mnt/c/dev/asp/MyDebtsApi/MyDebtsApi.csproj",
+      "projectPath": "/mnt/c/dev/Repositório/testesAspNet/MyDebtsApi/MyDebtsApi.csproj",
       "packagesPath": "/home/samuelpierre/.nuget/packages/",
-      "outputPath": "/mnt/c/dev/asp/MyDebtsApi/obj/",
+      "outputPath": "/mnt/c/dev/Repositório/testesAspNet/MyDebtsApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/samuelpierre/.nuget/NuGet/NuGet.Config"
